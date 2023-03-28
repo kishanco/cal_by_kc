@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="simpleCalc.css">
+</head>
+<body>
+    <h1 class="headding">Simple calculator</h1>
+    <div id="div">
+        <label for="first" id="first1">first Number:</label>
+        <input type="number" id="first" step="any"><br><br>
+            <label for="option" id="option1">Select Operator:</label>
+            <select id="option">
+                <option id="opt" value="+">+</option>
+                <option id="opt" value="-">-</option>
+                <option id="opt" value="*">x</option>
+                <option id="opt" value="/">/</option>
+            </select><br><br>
+        <label for="second" id="second1">Second Number:</label>
+        <input type="number" id="second" step="any"><br><br>
+        <button onclick="calculation()">Calculate Result</button>
+        <input type="text" id="result" readonly="">
+    </div>
+</body>
+<script type="text/javascript">
+    function calculation(){
+        var operand1=document.getElementById('first').value;
+        var operand2=document.getElementById('second').value;
+        var operator=document.getElementById('option').value;
+        if(operator=='+'){
+            var Result=parseInt(operand1)+ parseInt(operand2);
+        }
+        if(operator=='-'){
+            var Result=parseInt(operand1)- parseInt(operand2);
+        }
+        if(operator=='*'){
+            var Result=parseInt(operand1)* parseInt(operand2);
+        }
+        if(operator=='/'){
+            var Result=parseInt(operand1)/ parseInt(operand2);
+        } 
+        document.getElementById('result').value=Result;
+    }
+</script>
+</html>
